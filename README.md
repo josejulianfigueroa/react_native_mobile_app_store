@@ -1,1 +1,0 @@
-# react_native_mobile_app_store
