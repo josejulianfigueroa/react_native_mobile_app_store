@@ -4,6 +4,8 @@ export interface User {
   image: string;
   password?: string;
   fullName: string;
+  isActive?: string;
+  emailVerified?: string;
   role: string;
   token?: string;
 }
