@@ -21,3 +21,5 @@ web-build/
 
 expo-env.d.ts
 # @end expo-cli
+google-services.json
+expo-push-notifications-181c6-firebase-adminsdk-fbsvc-6b9244bd4a.json

@@ -46,8 +46,8 @@ const DrawerLayout = () => {
       <Drawer.Screen
         name="schedule/index"
         options={{
-          drawerLabel: 'Horario',
-          title: 'Horario',
+          drawerLabel: 'Notificaciones',
+          title: 'Notificaciones',
           drawerIcon: ({ color, size }) => (
             <Ionicons name="calendar-outline" size={size} color={color} />
           ),
