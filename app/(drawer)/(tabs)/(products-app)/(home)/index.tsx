@@ -1,10 +1,11 @@
 import { ActivityIndicator, StyleSheet, View } from 'react-native';
-import { router } from 'expo-router';
+import { router, useNavigation } from 'expo-router';
 import { FAB } from '@/presentation/theme/components/FAB';
 import ProductList from '@/presentation/products/components/ProductList';
 import { useProducts } from '@/presentation/products/hooks/useProducts';
 
 const HomeScreen = () => {
+  
   const { productsQuery, loadNextPage } = useProducts();
 
   if (productsQuery.isLoading) {
@@ -17,6 +18,7 @@ const HomeScreen = () => {
 
   return (
     <View style={{ paddingHorizontal: 10, ...StyleSheet.absoluteFillObject }}>
+      
       <ProductList
         products={productsQuery.data?.pages.flatMap((page) => page) ?? []}
         loadNextPage={loadNextPage}
@@ -24,7 +26,7 @@ const HomeScreen = () => {
 
       <FAB
         iconName="add-outline"
-        onPress={() => router.push('/(products-app)/product/new')}
+        onPress={() => router.push('/(drawer)/(tabs)/(products-app)/camera')}
       />
     </View>
   );

@@ -66,7 +66,7 @@ const ProductScreen = () => {
   }
 
   if (!productQuery.data) {
-    return <Redirect href="/(products-app)/(home)" />;
+    return <Redirect href="/(drawer)/(products-app)/(home)" />;
   }
 
   const product = productQuery.data!;

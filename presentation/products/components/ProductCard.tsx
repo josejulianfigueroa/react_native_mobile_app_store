@@ -1,15 +1,19 @@
 import { router } from 'expo-router';
-import { TouchableOpacity, Image } from 'react-native';
+import { TouchableOpacity, Image, Animated } from 'react-native';
 
 import { Product } from '@/core/products/interfaces/product.interface';
 import { ThemedText } from '@/presentation/theme/components/ThemedText';
 import { ThemedView } from '@/presentation/theme/components/ThemedView';
+import { useAnimation } from '@/presentation/theme/hooks/useAnimation';
 
 interface Props {
   product: Product;
 }
 
 export const ProductCard = ({ product }: Props) => {
+
+   const { animatedOpacity, fadeIn } = useAnimation();
+   
   return (
     <ThemedView
       style={{
@@ -28,9 +32,12 @@ export const ProductCard = ({ product }: Props) => {
             style={{ width: '100%', height: 200 }}
           />
         ) : (
-          <Image
+          <Animated.Image
             source={{ uri: product.images[0] }}
-            style={{ flex: 1, height: 200, width: '100%' }}
+            style={{ flex: 1, height: 200, width: '100%', opacity: animatedOpacity }}
+             onLoadEnd={() => {
+                fadeIn({});
+        }}
           />
         )}
 
