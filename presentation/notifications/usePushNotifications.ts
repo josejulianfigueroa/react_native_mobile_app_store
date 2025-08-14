@@ -140,7 +140,7 @@ export const usePushNotifications = () => {
         const { chatId } = response.notification.request.content.data;
 
         if (chatId) {
-          router.push(`/(drawer)/schedule/noti/${chatId}`);
+          router.push(`/(drawer)/(tabs)/(products-app)/noti/${chatId}`);
         }
       });
 
